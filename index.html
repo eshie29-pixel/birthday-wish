@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Tashdid Khan Sazid 💙</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         FLOWER TRANSITION
+         ========================================== -->
+
+    <div id="flowerTransition" class="flower-transition"></div>
+
+
+    <!-- ==========================================
+         PAGE 1 — OPENING SCREEN
+         ========================================== -->
+
+    <section id="page1" class="page active">
+
+        <div class="background-bubbles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="opening-content">
+
+            <p class="small-intro">
+                A little surprise for you 💙
+            </p>
+
+            <h1 class="birthday-title">
+                Happy Birthday
+                <br>
+                <span id="birthdayName">
+                    Tashdid Khan Sazid
+                </span>
+            </h1>
+
+            <p class="opening-message">
+                I made something special just for you ✨
+            </p>
+
+
+            <!-- GIFT BOX -->
+
+            <div id="giftBox"
+                 class="gift-box"
+                 role="button"
+                 tabindex="0"
+                 aria-label="Open birthday gift">
+
+                <div class="gift-glow"></div>
+
+                <div class="gift-lid">
+
+                    <div class="gift-ribbon-vertical"></div>
+
+                </div>
+
+                <div class="gift-body">
+
+                    <div class="gift-ribbon-vertical"></div>
+
+                    <div class="gift-ribbon-horizontal"></div>
+
+                </div>
+
+                <div class="gift-bow">
+
+                    <div class="bow-left"></div>
+
+                    <div class="bow-right"></div>
+
+                    <div class="bow-center"></div>
+
+                </div>
+
+            </div>
+
+
+            <p class="click-text">
+                ✨ Click the gift to open ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         PAGE 2 — PRESENTS FOR YOU
+         ========================================== -->
+
+    <section id="page2" class="page">
+
+        <div class="page-container">
+
+            <div class="presents-card">
+
+                <div class="card-decoration top-left">✦</div>
+                <div class="card-decoration top-right">✦</div>
+
+                <p class="section-small-title">
+                    A LITTLE SURPRISE
+                </p>
+
+                <h2 class="section-title">
+                    PRESENTS FOR YOU
+                </h2>
+
+                <p class="section-subtitle">
+                    CLICK ANY GIFT TO OPEN
+                </p>
+
+
+                <!-- THREE SEGMENTS -->
+
+                <div class="present-grid">
+
+
+                    <!-- PHOTO -->
+
+                    <button class="present-item"
+                            id="photoButton"
+                            type="button">
+
+                        <div class="present-icon photo-icon">
+
+                            <div class="photo-card back-card"></div>
+
+                            <div class="photo-card front-card">
+
+                                <div class="mountain"></div>
+                                <div class="sun"></div>
+                                <div class="photo-person"></div>
+
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Our Memories
+                        </h3>
+
+                        <p>
+                            Photos &amp; moments
+                        </p>
+
+                    </button>
+
+
+
+                    <!-- MUSIC / VIDEO -->
+
+                    <button class="present-item"
+                            id="musicButton"
+                            type="button">
+
+                        <div class="present-icon music-icon">
+
+                            <div class="vinyl">
+
+                                <div class="vinyl-center">
+                                    ♪
+                                </div>
+
+                            </div>
+
+                            <div class="music-note">
+                                ♪
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Our Song
+                        </h3>
+
+                        <p>
+                            Music &amp; video
+                        </p>
+
+                    </button>
+
+
+
+                    <!-- LETTER -->
+
+                    <button class="present-item"
+                            id="letterButton"
+                            type="button">
+
+                        <div class="present-icon envelope-icon">
+
+                            <div class="envelope">
+
+                                <div class="envelope-paper">
+                                </div>
+
+                                <div class="envelope-flap">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            A Letter
+                        </h3>
+
+                        <p>
+                            Something from my heart
+                        </p>
+
+                    </button>
+
+
+                </div>
+
+
+                <p class="bottom-note">
+                    Made with love ♡
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         PAGE 3 — PHOTO MEMORIES
+         ========================================== -->
+
+    <section id="photoPage"
+             class="sub-page">
+
+        <div class="sub-page-container">
+
+            <button class="back-button"
+                    type="button"
+                    data-back>
+                ← BACK
+            </button>
+
+
+            <div class="sub-page-heading">
+
+                <span class="heading-decoration">
+                    ✦
+                </span>
+
+                <h2>
+                    OUR MEMORIES
+                </h2>
+
+                <p>
+                    Every picture holds a little piece of us 💙
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO GALLERY -->
+
+            <div id="photoGallery"
+                 class="photo-gallery">
+
+                <!-- JavaScript will add photos here -->
+
+            </div>
+
+
+            <p class="gallery-hint">
+                Tap a photo to see it closer ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         PAGE 4 — MUSIC / VIDEO
+         ========================================== -->
+
+    <section id="musicPage"
+             class="sub-page">
+
+        <div class="sub-page-container">
+
+            <button class="back-button"
+                    type="button"
+                    data-back>
+                ← BACK
+            </button>
+
+
+            <div class="sub-page-heading">
+
+                <span class="heading-decoration">
+                    ♪
+                </span>
+
+                <h2>
+                    A SONG THAT REMINDS ME OF US
+                </h2>
+
+                <p>
+                    A little melody for a special person 🎶
+                </p>
+
+            </div>
+
+
+            <div class="media-card">
+
+
+                <!-- VIDEO -->
+
+                <div class="video-wrapper">
+
+                    <video id="birthdayVideo"
+                           controls
+                           playsinline
+                           preload="metadata">
+
+                        <source id="videoSource"
+                                src=""
+                                type="video/mp4">
+
+                        Your browser does not support video playback.
+
+                    </video>
+
+                    <div id="videoPlaceholder"
+                         class="media-placeholder">
+
+                        <div class="placeholder-icon">
+                            ▶
+                        </div>
+
+                        <h3>
+                            Your Special Video
+                        </h3>
+
+                        <p>
+                            Add your MP4 video to see it here 💙
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AUDIO -->
+
+                <div class="music-player">
+
+                    <div class="music-player-icon">
+                        ♫
+                    </div>
+
+                    <div class="music-player-info">
+
+                        <span>
+                            OUR SONG
+                        </span>
+
+                        <strong>
+                            A song for you 💙
+                        </strong>
+
+                    </div>
+
+                    <button id="musicPlayButton"
+                            class="music-play-button"
+                            type="button">
+                        ▶
+                    </button>
+
+                </div>
+
+
+                <audio id="birthdayMusic"
+                       preload="metadata">
+
+                    <source id="musicSource"
+                            src=""
+                            type="audio/mpeg">
+
+                    Your browser does not support audio playback.
+
+                </audio>
+
+
+                <p class="media-note">
+                    You can replace the music or video with your own file
+                    from the <strong>assets</strong> folder.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         PAGE 5 — BIRTHDAY LETTER
+         ========================================== -->
+
+    <section id="letterPage"
+             class="sub-page">
+
+        <div class="sub-page-container">
+
+            <button class="back-button"
+                    type="button"
+                    data-back>
+                ← BACK
+            </button>
+
+
+            <div class="letter-wrapper">
+
+                <div class="letter-paper">
+
+                    <div class="paper-decoration decoration-one">
+                        ♡
+                    </div>
+
+                    <div class="paper-decoration decoration-two">
+                        ✦
+                    </div>
+
+
+                    <p class="letter-date">
+                        With all my heart 💙
+                    </p>
+
+
+                    <h2 class="letter-title">
+                        Dear Love
+                    </h2>
+
+
+                    <!--
+                    ==========================================
+                    BIRTHDAY LETTER
+
+                    The actual letter will be inserted
+                    automatically by JavaScript.
+                    ==========================================
+                    -->
+
+                    <div id="birthdayLetter"
+                         class="birthday-letter">
+                    </div>
+
+
+                    <div class="letter-signature">
+
+                        <span>
+                            Forever yours
+                        </span>
+
+                        <div class="signature-heart">
+                            ♡
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         PHOTO LIGHTBOX
+         ========================================== -->
+
+    <div id="photoLightbox"
+         class="lightbox">
+
+        <button id="closeLightbox"
+                class="lightbox-close"
+                type="button"
+                aria-label="Close photo">
+            ×
+        </button>
+
+        <img id="lightboxImage"
+             src=""
+             alt="Memory">
+
+        <button id="previousPhoto"
+                class="lightbox-arrow previous"
+                type="button">
+            ‹
+        </button>
+
+        <button id="nextPhoto"
+                class="lightbox-arrow next"
+                type="button">
+            ›
+        </button>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
