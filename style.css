@@ -1,0 +1,1702 @@
+/* =========================================================
+   BIRTHDAY WISH WEBSITE
+   STYLE.CSS
+   Blue + White Romantic Theme
+   ========================================================= */
+
+
+/* =========================================================
+   1. BASIC RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: #eef7ff;
+    color: #163a63;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+button,
+img {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   2. COMMON PAGE
+   ========================================================= */
+
+.page,
+.sub-page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.page {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+    animation: pageFadeIn 1s ease forwards;
+}
+
+.sub-page {
+    display: none;
+    padding: 25px 16px;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,.95), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(167,215,255,.5), transparent 30%),
+        linear-gradient(135deg, #eaf6ff, #ffffff, #d9efff);
+}
+
+.sub-page.active {
+    display: block;
+    animation: subPageIn .7s ease forwards;
+}
+
+
+/* =========================================================
+   3. PAGE 1 BACKGROUND
+   ========================================================= */
+
+#page1 {
+    background:
+        radial-gradient(circle at 20% 20%, #ffffff 0%, transparent 22%),
+        radial-gradient(circle at 80% 75%, rgba(148,210,255,.45), transparent 30%),
+        linear-gradient(145deg, #dff2ff 0%, #ffffff 48%, #c9e9ff 100%);
+}
+
+#page1::before,
+#page1::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#page1::before {
+    width: 320px;
+    height: 320px;
+    background: rgba(255,255,255,.45);
+    top: -120px;
+    right: -100px;
+}
+
+#page1::after {
+    width: 250px;
+    height: 250px;
+    background: rgba(112,190,245,.14);
+    bottom: -100px;
+    left: -80px;
+}
+
+
+/* =========================================================
+   4. BACKGROUND BUBBLES
+   ========================================================= */
+
+.background-bubbles span {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background: rgba(255,255,255,.65);
+    box-shadow: 0 0 20px rgba(72,159,220,.12);
+    animation: floatingBubble 6s ease-in-out infinite;
+}
+
+.background-bubbles span:nth-child(1) {
+    width: 25px;
+    height: 25px;
+    left: 8%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.background-bubbles span:nth-child(2) {
+    width: 14px;
+    height: 14px;
+    left: 85%;
+    top: 25%;
+    animation-delay: 1s;
+}
+
+.background-bubbles span:nth-child(3) {
+    width: 35px;
+    height: 35px;
+    left: 15%;
+    bottom: 20%;
+    animation-delay: 2s;
+}
+
+.background-bubbles span:nth-child(4) {
+    width: 18px;
+    height: 18px;
+    right: 12%;
+    bottom: 17%;
+    animation-delay: 3s;
+}
+
+.background-bubbles span:nth-child(5) {
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 12%;
+    animation-delay: 4s;
+}
+
+
+/* =========================================================
+   5. OPENING CONTENT
+   ========================================================= */
+
+.opening-content {
+    width: min(92%, 600px);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.small-intro {
+    font-size: .85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5088b7;
+    margin-bottom: 10px;
+    animation: textUp 1s ease .2s both;
+}
+
+.birthday-title {
+    color: #2774ad;
+    font-size: clamp(2.1rem, 9vw, 4.8rem);
+    line-height: 1.12;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-shadow: 0 4px 18px rgba(40,120,180,.15);
+    animation: textUp 1s ease .4s both;
+}
+
+.birthday-title span {
+    font-family: "Dancing Script", cursive;
+    color: #185f9b;
+    font-size: 1.05em;
+}
+
+.opening-message {
+    color: #6a8da9;
+    font-size: .95rem;
+    margin-bottom: 35px;
+    animation: textUp 1s ease .6s both;
+}
+
+
+/* =========================================================
+   6. GIFT BOX
+   ========================================================= */
+
+.gift-box {
+    width: 150px;
+    height: 145px;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+    animation:
+        giftEntrance 1.2s ease .7s both,
+        giftFloat 3s ease-in-out 2s infinite;
+    filter: drop-shadow(0 18px 18px rgba(44,116,174,.2));
+    outline: none;
+}
+
+.gift-box:hover {
+    transform: scale(1.06);
+}
+
+.gift-box:active {
+    transform: scale(.95);
+}
+
+.gift-body {
+    position: absolute;
+    width: 125px;
+    height: 90px;
+    left: 12px;
+    bottom: 0;
+    border-radius: 8px 8px 15px 15px;
+    background: linear-gradient(145deg, #77baf0, #3184c3);
+    border: 3px solid rgba(255,255,255,.8);
+    box-shadow:
+        inset 0 5px 10px rgba(255,255,255,.3),
+        0 8px 20px rgba(38,110,165,.2);
+}
+
+.gift-lid {
+    position: absolute;
+    width: 145px;
+    height: 35px;
+    left: 2px;
+    bottom: 82px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #8bc9f8, #438fc8);
+    border: 3px solid rgba(255,255,255,.9);
+    z-index: 5;
+    transition: transform 1s cubic-bezier(.68,-.55,.27,1.55);
+    transform-origin: bottom left;
+}
+
+.gift-ribbon-vertical {
+    position: absolute;
+    width: 22px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    opacity: .9;
+}
+
+.gift-ribbon-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 18px;
+    top: 35%;
+    background: rgba(255,255,255,.85);
+}
+
+.gift-bow {
+    position: absolute;
+    left: 50%;
+    bottom: 105px;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 45px;
+    z-index: 10;
+    transition: transform 1s ease;
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+    width: 37px;
+    height: 27px;
+    background: #ffffff;
+    border: 3px solid #428dc8;
+    top: 5px;
+}
+
+.bow-left {
+    right: 50%;
+    border-radius: 80% 20% 60% 40%;
+    transform: rotate(18deg);
+}
+
+.bow-right {
+    left: 50%;
+    border-radius: 20% 80% 40% 60%;
+    transform: rotate(-18deg);
+}
+
+.bow-center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #4a96d0;
+    border-radius: 50%;
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+    border: 3px solid white;
+}
+
+.gift-glow {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(125,202,255,.3);
+    filter: blur(25px);
+    opacity: .7;
+    animation: giftGlow 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.gift-box.opened .gift-lid {
+    transform: translateY(-70px) rotate(-8deg);
+}
+
+.gift-box.opened .gift-bow {
+    transform: translateX(-50%) translateY(-75px) rotate(-8deg);
+}
+
+.gift-box.opened {
+    animation: giftOpenShake .7s ease forwards;
+}
+
+.click-text {
+    margin-top: 25px;
+    color: #4c83ad;
+    font-size: .85rem;
+    letter-spacing: .5px;
+    animation: blinkText 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   7. PAGE 2
+   ========================================================= */
+
+#page2 {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.9), transparent 25%),
+        radial-gradient(circle at 90% 90%, rgba(142,207,249,.4), transparent 30%),
+        linear-gradient(135deg, #dff3ff, #ffffff, #cceaff);
+}
+
+.page-container {
+    width: min(94%, 900px);
+    margin: auto;
+    position: relative;
+    z-index: 3;
+}
+
+.presents-card {
+    position: relative;
+    width: 100%;
+    padding: 40px 25px 30px;
+    background: rgba(255,255,255,.9);
+    border: 1px solid rgba(110,181,230,.25);
+    border-radius: 30px;
+    box-shadow: 0 25px 70px rgba(42,113,166,.15);
+    text-align: center;
+    overflow: hidden;
+    animation: cardPop .9s ease both;
+}
+
+.presents-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(166,220,255,.25);
+    border-radius: 50%;
+    top: -100px;
+    left: -80px;
+}
+
+.presents-card::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(188,229,255,.25);
+    border-radius: 50%;
+    right: -100px;
+    bottom: -110px;
+}
+
+.card-decoration {
+    position: absolute;
+    color: #5da5d9;
+    font-size: 28px;
+    z-index: 2;
+}
+
+.top-left {
+    top: 18px;
+    left: 22px;
+}
+
+.top-right {
+    top: 18px;
+    right: 22px;
+}
+
+.section-small-title {
+    font-size: .72rem;
+    letter-spacing: 3px;
+    color: #6b9abd;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(2.3rem, 8vw, 4rem);
+    color: #2372ad;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.section-subtitle {
+    font-size: .72rem;
+    letter-spacing: 2px;
+    color: #7193aa;
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.present-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+    position: relative;
+    z-index: 3;
+}
+
+.present-item {
+    border: none;
+    background: #eef8ff;
+    border-radius: 22px;
+    padding: 25px 12px 20px;
+    cursor: pointer;
+    color: #286c9e;
+    box-shadow: 0 8px 25px rgba(40,116,175,.1);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.present-item:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 35px rgba(40,116,175,.18);
+}
+
+.present-item:active {
+    transform: scale(.97);
+}
+
+.present-item h3 {
+    font-size: 1rem;
+    margin-top: 17px;
+}
+
+.present-item p {
+    font-size: .72rem;
+    color: #7896ac;
+    margin-top: 5px;
+}
+
+.present-icon {
+    width: 110px;
+    height: 110px;
+    margin: auto;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #72b7ed, #367fbc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 5px 15px rgba(255,255,255,.25);
+}
+
+
+/* =========================================================
+   8. PHOTO ICON
+   ========================================================= */
+
+.photo-card {
+    position: absolute;
+    width: 58px;
+    height: 72px;
+    background: white;
+    border: 4px solid #e6f5ff;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.12);
+}
+
+.front-card {
+    transform: rotate(-7deg);
+}
+
+.back-card {
+    transform: rotate(10deg) translate(10px, -4px);
+    opacity: .9;
+}
+
+.mountain {
+    position: absolute;
+    width: 45px;
+    height: 25px;
+    bottom: 8px;
+    left: 5px;
+    background: #70b6e9;
+    clip-path: polygon(0 100%, 38% 35%, 58% 65%, 76% 20%, 100% 100%);
+}
+
+.sun {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #8bcdf2;
+    top: 8px;
+    right: 8px;
+}
+
+.photo-person {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #579bd0;
+    left: 22px;
+    top: 29px;
+}
+
+
+/* =========================================================
+   9. MUSIC ICON
+   ========================================================= */
+
+.vinyl {
+    width: 72px;
+    height: 72px;
+    background: #dff3ff;
+    border-radius: 50%;
+    border: 7px solid white;
+    position: relative;
+    animation: spinVinyl 5s linear infinite;
+}
+
+.vinyl::before,
+.vinyl::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #79b6df;
+}
+
+.vinyl::before {
+    inset: 12px;
+}
+
+.vinyl::after {
+    inset: 25px;
+}
+
+.vinyl-center {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #3d8bc5;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-note {
+    position: absolute;
+    right: 12px;
+    top: 9px;
+    color: white;
+    font-size: 25px;
+    animation: noteFloat 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   10. ENVELOPE ICON
+   ========================================================= */
+
+.envelope {
+    width: 78px;
+    height: 58px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 7px 15px rgba(0,0,0,.15);
+    overflow: hidden;
+}
+
+.envelope-paper {
+    position: absolute;
+    width: 55px;
+    height: 45px;
+    background: #dcefff;
+    left: 12px;
+    top: -22px;
+    transform: rotate(0deg);
+}
+
+.envelope-flap {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 12px;
+    top: -30px;
+    background: #edf8ff;
+    transform: rotate(45deg);
+    border-right: 2px solid #8bc7ec;
+    border-bottom: 2px solid #8bc7ec;
+}
+
+
+/* =========================================================
+   11. BOTTOM NOTE
+   ========================================================= */
+
+.bottom-note {
+    margin-top: 25px;
+    color: #7a9ab1;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   12. SUB PAGES
+   ========================================================= */
+
+.sub-page-container {
+    width: min(100%, 1000px);
+    margin: auto;
+    padding-top: 5px;
+}
+
+.back-button {
+    border: 0;
+    background: white;
+    color: #3278ac;
+    padding: 11px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: .8rem;
+    font-weight: 600;
+    box-shadow: 0 7px 20px rgba(45,115,165,.12);
+    transition: all .3s ease;
+}
+
+.back-button:hover {
+    background: #e5f5ff;
+    transform: translateX(-4px);
+}
+
+.sub-page-heading {
+    text-align: center;
+    margin: 20px auto 30px;
+    max-width: 700px;
+}
+
+.heading-decoration {
+    display: block;
+    color: #67aad7;
+    font-size: 1.8rem;
+    margin-bottom: 3px;
+}
+
+.sub-page-heading h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    color: #2372ad;
+    line-height: 1.1;
+}
+
+.sub-page-heading p {
+    color: #7597ae;
+    font-size: .85rem;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   13. PHOTO GALLERY
+   ========================================================= */
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 10px 28px rgba(41,112,163,.14);
+    animation: galleryItemIn .7s ease both;
+}
+
+.gallery-item:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.gallery-item:nth-child(3) {
+    animation-delay: .16s;
+}
+
+.gallery-item:nth-child(4) {
+    animation-delay: .24s;
+}
+
+.gallery-item:nth-child(5) {
+    animation-delay: .32s;
+}
+
+.gallery-item:nth-child(6) {
+    animation-delay: .40s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item::after {
+    content: "♡";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    background: rgba(32,116,174,.25);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-hint {
+    text-align: center;
+    color: #7c9aae;
+    font-size: .75rem;
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   14. MEDIA PAGE
+   ========================================================= */
+
+.media-card {
+    width: min(100%, 760px);
+    margin: auto;
+    background: rgba(255,255,255,.9);
+    padding: 18px;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(39,110,163,.15);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #dcefff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.video-wrapper.video-ready video {
+    display: block;
+}
+
+.video-wrapper.video-ready .media-placeholder {
+    display: none;
+}
+
+.media-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #5285a9;
+    padding: 20px;
+}
+
+.placeholder-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #3987c1;
+    font-size: 23px;
+    box-shadow: 0 8px 25px rgba(40,110,160,.14);
+    margin-bottom: 12px;
+}
+
+.media-placeholder h3 {
+    font-size: 1rem;
+}
+
+.media-placeholder p {
+    font-size: .72rem;
+    margin-top: 5px;
+}
+
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #eef8ff;
+    margin-top: 18px;
+    padding: 13px 15px;
+    border-radius: 18px;
+}
+
+.music-player-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #70b8e9, #3d87bf);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.music-player-info {
+    flex: 1;
+    text-align: left;
+}
+
+.music-player-info span {
+    display: block;
+    color: #7197b1;
+    font-size: .6rem;
+    letter-spacing: 1.5px;
+}
+
+.music-player-info strong {
+    display: block;
+    color: #286e9f;
+    font-size: .85rem;
+    margin-top: 2px;
+}
+
+.music-play-button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #3984bc;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(40,110,160,.12);
+    transition: transform .2s ease;
+}
+
+.music-play-button:hover {
+    transform: scale(1.08);
+}
+
+.media-note {
+    text-align: center;
+    font-size: .68rem;
+    color: #7b9bae;
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   15. BIRTHDAY LETTER
+   ========================================================= */
+
+.letter-wrapper {
+    width: min(100%, 850px);
+    margin: 0 auto;
+}
+
+.letter-paper {
+    position: relative;
+    min-height: 500px;
+    padding: 55px clamp(22px, 7vw, 75px);
+    background:
+        linear-gradient(rgba(255,255,255,.96), rgba(244,250,255,.96));
+    border-radius: 8px;
+    box-shadow:
+        0 20px 60px rgba(42,110,160,.15),
+        inset 0 0 50px rgba(116,187,229,.06);
+    border: 1px solid rgba(117,180,220,.2);
+    overflow: hidden;
+    animation: letterOpen .9s ease both;
+}
+
+.letter-paper::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(92,157,202,.18);
+    pointer-events: none;
+}
+
+.letter-paper::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(184,226,250,.15);
+    right: -50px;
+    top: -50px;
+}
+
+.paper-decoration {
+    position: absolute;
+    color: #72acd0;
+    font-size: 28px;
+    z-index: 2;
+}
+
+.decoration-one {
+    top: 28px;
+    left: 30px;
+}
+
+.decoration-two {
+    bottom: 25px;
+    right: 30px;
+}
+
+.letter-date {
+    color: #7c9cb2;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.letter-title {
+    font-family: "Dancing Script", cursive;
+    color: #286f9f;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin: 18px 0 25px;
+}
+
+.birthday-letter {
+    position: relative;
+    z-index: 2;
+    color: #496d86;
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.letter-signature {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    margin-top: 35px;
+    color: #3979a5;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.8rem;
+}
+
+.signature-heart {
+    display: inline-block;
+    color: #5a9fd0;
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   16. LIGHTBOX
+   ========================================================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,72,111,.88);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 55px;
+}
+
+.lightbox.show {
+    display: flex;
+    animation: lightboxIn .35s ease both;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #367ca9;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,.9);
+    color: #327aa9;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.lightbox-arrow.previous {
+    left: 15px;
+}
+
+.lightbox-arrow.next {
+    right: 15px;
+}
+
+
+/* =========================================================
+   17. FLOWER TRANSITION
+   ========================================================= */
+
+.flower-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    pointer-events: none;
+    display: none;
+    overflow: hidden;
+    background: rgba(255,255,255,.15);
+}
+
+.flower-transition.active {
+    display: block;
+}
+
+.bloom-flower {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    left: var(--x);
+    top: var(--y);
+    opacity: 0;
+    transform: scale(0) rotate(var(--rotate));
+    animation: bloomFlower var(--duration) ease forwards;
+    animation-delay: var(--delay);
+}
+
+.bloom-flower .petal {
+    position: absolute;
+    width: 42%;
+    height: 58%;
+    left: 29%;
+    top: 10%;
+    background: linear-gradient(145deg, white, #8dcaf0);
+    border-radius: 60% 40% 60% 40%;
+    transform-origin: 50% 80%;
+    box-shadow: 0 0 10px rgba(90,163,211,.25);
+}
+
+.bloom-flower .petal:nth-child(1) {
+    transform: rotate(0deg) translateY(-18%);
+}
+
+.bloom-flower .petal:nth-child(2) {
+    transform: rotate(72deg) translateY(-18%);
+}
+
+.bloom-flower .petal:nth-child(3) {
+    transform: rotate(144deg) translateY(-18%);
+}
+
+.bloom-flower .petal:nth-child(4) {
+    transform: rotate(216deg) translateY(-18%);
+}
+
+.bloom-flower .petal:nth-child(5) {
+    transform: rotate(288deg) translateY(-18%);
+}
+
+.bloom-flower .flower-center {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    left: 37.5%;
+    top: 37.5%;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255,255,255,.8);
+}
+
+.transition-cover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #dff3ff, #ffffff);
+    opacity: 0;
+    animation: transitionCover 3.2s ease forwards;
+}
+
+
+/* =========================================================
+   18. ANIMATIONS
+   ========================================================= */
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes subPageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes textUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes giftEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(.6);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes giftGlow {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(.85);
+        opacity: .45;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: .8;
+    }
+}
+
+@keyframes giftOpenShake {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.08) rotate(-3deg);
+    }
+
+    60% {
+        transform: scale(1.08) rotate(3deg);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes blinkText {
+    0%, 100% {
+        opacity: .55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes floatingBubble {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes cardPop {
+    from {
+        opacity: 0;
+        transform: scale(.88) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes spinVinyl {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes noteFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes galleryItemIn {
+    from {
+        opacity: 0;
+        transform: scale(.8) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotateX(8deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+@keyframes lightboxIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bloomFlower {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(var(--rotate));
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(calc(var(--rotate) + 25deg));
+    }
+}
+
+@keyframes transitionCover {
+    0% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   19. TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .present-grid {
+        gap: 10px;
+    }
+
+    .present-item {
+        padding: 18px 8px;
+        border-radius: 18px;
+    }
+
+    .present-icon {
+        width: 85px;
+        height: 85px;
+        border-radius: 20px;
+    }
+
+    .present-item h3 {
+        font-size: .82rem;
+    }
+
+    .present-item p {
+        font-size: .62rem;
+    }
+
+    .photo-gallery {
+        gap: 11px;
+    }
+
+    .letter-paper {
+        min-height: 450px;
+    }
+}
+
+
+/* =========================================================
+   20. MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .opening-content {
+        width: 92%;
+    }
+
+    .birthday-title {
+        font-size: 2.35rem;
+    }
+
+    .opening-message {
+        font-size: .8rem;
+        margin-bottom: 25px;
+    }
+
+    .gift-box {
+        transform: scale(.9);
+    }
+
+    .click-text {
+        font-size: .72rem;
+    }
+
+    .presents-card {
+        padding: 32px 12px 25px;
+        border-radius: 24px;
+    }
+
+    .section-title {
+        font-size: 2.35rem;
+    }
+
+    .section-subtitle {
+        font-size: .6rem;
+        letter-spacing: 1.3px;
+    }
+
+    .present-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .present-item {
+        min-height: 95px;
+        display: grid;
+        grid-template-columns: 75px 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .present-icon {
+        width: 70px;
+        height: 70px;
+        grid-row: 1 / 3;
+        grid-column: 1;
+        border-radius: 17px;
+    }
+
+    .present-item h3 {
+        grid-column: 2;
+        margin: 0;
+        font-size: .9rem;
+        align-self: end;
+    }
+
+    .present-item p {
+        grid-column: 2;
+        margin: 2px 0 0;
+        align-self: start;
+    }
+
+    .photo-card {
+        width: 39px;
+        height: 49px;
+        border-width: 2px;
+    }
+
+    .mountain {
+        width: 30px;
+        height: 17px;
+        left: 3px;
+        bottom: 5px;
+    }
+
+    .sun {
+        width: 8px;
+        height: 8px;
+        top: 5px;
+        right: 5px;
+    }
+
+    .photo-person {
+        width: 10px;
+        height: 10px;
+        left: 15px;
+        top: 20px;
+    }
+
+    .vinyl {
+        width: 48px;
+        height: 48px;
+        border-width: 5px;
+    }
+
+    .music-note {
+        font-size: 18px;
+        right: 6px;
+        top: 5px;
+    }
+
+    .envelope {
+        width: 55px;
+        height: 42px;
+    }
+
+    .envelope-paper {
+        width: 39px;
+        height: 32px;
+        left: 8px;
+    }
+
+    .envelope-flap {
+        width: 39px;
+        height: 39px;
+        left: 8px;
+        top: -22px;
+    }
+
+    .sub-page {
+        padding: 18px 12px;
+    }
+
+    .sub-page-heading {
+        margin: 15px auto 22px;
+    }
+
+    .sub-page-heading h2 {
+        font-size: 2.4rem;
+    }
+
+    .sub-page-heading p {
+        font-size: .72rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .letter-paper {
+        padding: 45px 25px;
+    }
+
+    .birthday-letter {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .letter-title {
+        font-size: 2.7rem;
+    }
+
+    .letter-signature {
+        font-size: 1.5rem;
+    }
+
+    .media-card {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .music-player {
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .music-player-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .music-play-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lightbox {
+        padding: 50px 15px;
+    }
+
+    .lightbox img {
+        max-width: 96%;
+    }
+
+    .lightbox-arrow.previous {
+        left: 5px;
+    }
+
+    .lightbox-arrow.next {
+        right: 5px;
+    }
+}
+
+
+/* =========================================================
+   21. VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .birthday-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .present-item {
+        grid-template-columns: 65px 1fr;
+    }
+
+    .present-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+/* =========================================================
+   22. ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible {
+    outline: 3px solid rgba(58,143,201,.4);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   23. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
